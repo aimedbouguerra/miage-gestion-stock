@@ -1,0 +1,22 @@
+.container_12 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 960px;
+}
+
+.grid_4,
+.grid_8 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.container_12 .grid_4 {
+	width:300px;
+}
+
+.container_12 .grid_8 {
+	width:620px;
+}

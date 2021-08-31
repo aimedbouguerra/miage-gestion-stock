@@ -1,0 +1,19 @@
+{% include 'header.html'%}
+{% load static %}
+
+
+<table id="produits">
+  	<tr>
+    	<th>Produit</th>
+    	<th>Quantité</th>
+  	</tr>
+  	{% for Produit in ProduitDetails %}
+  	<tr>
+    	<td>{{Produit.nom}}</td>
+    	<td>{{Produit.quantite}}</td>
+  	</tr>
+	{% endfor %} 
+</table>
+
+
+{% include 'footer.html'%}

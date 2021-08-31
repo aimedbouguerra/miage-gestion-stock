@@ -1,0 +1,53 @@
+﻿{% include 'header.html'%}
+{% load static %}
+		<div class="slider-bg">
+			<img src="{% static 'images/aideshop.jpg' %}" alt="" width="970" height="400">
+		</div>
+	</div>
+</header>
+<!--==============================content================================-->
+<section id="content">
+	<div class="main">
+		<div class="container_12">
+			<div class="wrapper p3">
+				<article class="grid_8">
+					<div class="indent-left">
+						<h3>Bonjour !</h3>
+						<h4 class="color-3">Aide Shop a un seul but : répondre aux besoins des personnes qui sont en difficultés financières.</h4>
+						Aide Shop est une association qui délivre des produits alimentaires aux personnes en difficulté. Cette application est développée pour vous permettre de connaître l'état de nos stocks avant votre arrivée dans nos magasins. Si vous avez des questions, n'hésitez pas à communiquer avec nos bénévoles, nous sommes là pour vous !
+				</article>
+				<article class="grid_4">
+					<div class="indent-left indent-top">
+						<h4 class="prev-indent-bot2">Pour devenir bénéficiaire d’Aide Shop, il faut remplir les conditions suivantes :</h4>
+						<ul class="list-1">
+							<li>Être étudiant ou une personne âgée ou une personne en situation de handicap,</li>
+							<li>Ne pas dépasser un certain seuil de ressources,</li>
+							<li>Avoir son propre logement,</li>
+							<li>Être de nationalité française ou de nationalité étrangère en situation régulière sur le territoire français.</li>
+						</ul>
+					</div>
+				</article>
+			</div>
+			<aside>
+				<div class="wrapper">
+					{% for categorie in CategorieDetails %}
+					<article class="grid_4">
+						<div class="indent">
+							<span class="title-2">{{categorie.nom}}</span>
+							<div class="prev-indent-bot2 wrapper">
+								<figure class="img-border"><img src="static/images/categories/{{categorie.id}}.jpg" alt="" width="290" height="120"></figure>
+							</div>
+							<p class="p2">{{categorie.description}}</p>
+							<a class="color-3" href="produits/{{categorie.id}}">Voir plus</a>
+						</div>
+					</article>
+					{% endfor %}
+
+				</div>
+			</aside>
+		</div>
+	</div>
+	<div class="block"></div>
+</section>
+		</div>
+{% include 'footer.html'%}

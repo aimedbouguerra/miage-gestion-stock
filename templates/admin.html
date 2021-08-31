@@ -1,0 +1,31 @@
+{% include 'header.html'%}
+{% load static %}
+
+<form method="post">
+    {% csrf_token %}
+    <button class="favorite styled"  style="background-color:#333;margin-left: 15%;" formaction="../../produits/exporter/">Exporter les données</button>
+</form>
+
+<table id="produits">
+  	<tr>
+    	<th>Produit</th>
+    	<th>Quantité</th>
+    	<th>Action</th>
+  	</tr>
+  	{% for Produit in ProduitDetails %}
+  	<tr>
+    	<td>{{Produit.nom}}</td>
+    	<td>{{Produit.quantite}}</td>
+    	<td>
+    		<form method="post">
+    			{% csrf_token %}
+    			<button class="favorite styled" formaction="../../produits/delete/{{Produit.id}}/">Supprimer</button>
+    			<button class="favorite styled" style="background-color:#111;" formaction="../../produits/augmenter/{{Produit.id}}/">Augmenter</button>
+    			<button class="favorite styled" style="background-color:#999999;" formaction="../../produits/diminuer/{{Produit.id}}/">Diminuer</button>
+    		</form>
+    	</td>
+  	</tr>
+	{% endfor %} 
+</table>
+
+{% include 'footer.html'%}
